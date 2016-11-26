@@ -1,17 +1,18 @@
 package triangle;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 public class TriangleTest {
-
 	@Test
 	public void testTriangleField() {
-		Triangle tf = new Triangle(2.5f, 3);
-		double expected = tf.triangleField();
+		Triangle tf = new Triangle(2.5, 3);
+		double expectedField = 3.75d;
+		double delta = 1e-3;
 
-		assertEquals(expected, (tf.getA() * 2 + tf.getH() * 2) / 2.0f, 1e-15);
+		double actualField = tf.triangleField();
+
+		assertEquals(expectedField, actualField, delta);
 	}
-
 }
